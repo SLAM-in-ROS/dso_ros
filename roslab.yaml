@@ -1,0 +1,30 @@
+name: dso_ros
+
+distro: kinetic
+
+runtime: nvidia
+
+packages:
+  - libglew-dev
+  - libeigen3-dev
+  - libopencv-dev
+  
+source:
+  - name: Pangolin
+    repo: https://github.com/stevenlovegrove/Pangolin.git
+    depends:
+    build: cmake
+    
+  - name: dso
+    repo: https://github.com/JakobEngel/dso
+    depends:
+      - libsuitesparse-dev
+      - libeigen3-dev
+      - libboost-all-dev
+      - libopencv-dev
+    build: cmake
+
+volume:
+  - host_path: /DATASET
+    container_path: /DATASET
+    options: ro
