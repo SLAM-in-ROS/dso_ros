@@ -7,6 +7,8 @@ RUN apt-get update \
     libglew-dev \
     libeigen3-dev \
     libopencv-dev \
+    zlib1g-dev \
+    libzip-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -32,7 +34,7 @@ RUN git clone https://github.com/JakobEngel/dso /dso \
  && mkdir build \
  && cd build \
  && cmake ../ \
- && make -j4 
+ && make -j4
 
 COPY . ${HOME}
 
