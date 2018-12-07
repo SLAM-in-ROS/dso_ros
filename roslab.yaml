@@ -8,6 +8,8 @@ packages:
   - libglew-dev
   - libeigen3-dev
   - libopencv-dev
+  - zlib1g-dev
+  - libzip-dev
   
 source:
   - name: Pangolin
